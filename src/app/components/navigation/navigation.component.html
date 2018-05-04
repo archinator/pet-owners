@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default">
+  <ul class="nav navbar-nav">
+    <li>
+      <a routerLink="/">
+        <h3>HOME</h3>
+      </a>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <a routerLink="/owners">
+        <h3>OWNERS</h3>
+      </a>
+    </li>
+    <li *ngIf="!isAuthenticated">
+      <a routerLink="/login">
+        <h3>LOGIN</h3>
+      </a>
+    </li>
+    <li *ngIf="!isAuthenticated">
+      <a routerLink="/signup">
+        <h3>SIGN UP</h3>
+      </a>
+    </li>
+    <li *ngIf="isAuthenticated">
+      <a (click)="signout()">
+        <h3>SIGN OUT</h3>
+      </a>
+    </li>
+  </ul>
+</nav>

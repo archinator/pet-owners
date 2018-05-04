@@ -1,0 +1,26 @@
+<div *ngIf='!error'>
+  <h1>Owners List</h1>
+  <button class="btn btn-success" (click)="logout()">Logout</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Address</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let owner of owners">
+        <td>{{ owner.name }}</td>
+        <td>{{ owner.age }}</td>
+        <td>{{ owner.address }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="details(owner._id)">Details</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf='error'>
+  <p>Error: {{error.description}}, Status code: {{error.statusCode}}</p>
+</div>
